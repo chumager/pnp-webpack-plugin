@@ -178,4 +178,5 @@ module.exports = localPath => {
           resolveTypeReferenceDirectiveModule: require.resolve("./ts")
         })
       : options;
+  return exports;
 };
