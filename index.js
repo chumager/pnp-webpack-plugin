@@ -22,6 +22,7 @@ module.exports = localPath => {
     // ¯\_(ツ)_/¯
   }
   function getModuleLocator(module) {
+    console.log("getModuleLocator", module);
     const moduleLocation = typeof module === "string" ? module : module.filename;
 
     if (!moduleLocation) throw new Error("The specified module doesn't seem to exist on the filesystem");
