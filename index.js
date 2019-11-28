@@ -27,7 +27,7 @@ module.exports = localPath => {
 
     if (!moduleLocation) throw new Error("The specified module doesn't seem to exist on the filesystem");
 
-    const moduleLocator = pnp.findPackageLocator(moduleLocation);
+    const moduleLocator = pnp.findPackageLocator(moduleLocation) || (/^[./]/.test(moduleLocation) && moduleLocation);
 
     if (!moduleLocator) throw new Error("the specified module doesn't seem to be part of the dependency tree");
 
